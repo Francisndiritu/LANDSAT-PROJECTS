@@ -1,0 +1,75 @@
+var Landsat_8 = ee.ImageCollection("LANDSAT/LC08/C02/T1");
+// var roi = countries.filter(ee.Filter.eq('country_na','Kenya')) ;
+
+Map.addLayer(laikipia,{},'laikipia',false);
+Map.centerObject(laikipia,8);
+var data = ee.Algorithms.Landsat.simpleComposite({
+  collection : Landsat_8.filterDate('2022-07-30','2022-12-31'),
+  asFloat:true
+});
+
+var trueColoVis = {min :0,max:0.3,bands:['B4','B3','B2']};
+Map.addLayer(data.clip(laikipia),trueColoVis ,'composite');
+Export.image.toDrive({
+      image:data,
+      description:'land',
+       scale: 30,
+     region :laikipia.geometry().bounds(),
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    var Landsat_8 = ee.ImageCollection("LANDSAT/LC08/C02/T1");
+// var roi = countries.filter(ee.Filter.eq('country_na','Kenya')) ;
+
+Map.addLayer(laikipia,{},'laikipia',false);
+Map.centerObject(laikipia,8);
+var data = ee.Algorithms.Landsat.simpleComposite({
+  collection : Landsat_8.filterDate('2022-07-30','2022-12-31'),
+  asFloat:true
+});
+
+var trueColoVis = {min :0,max:0.3,bands:['B4','B3','B2']};
+Map.addLayer(data.clip(laikipia),trueColoVis ,'composite');
+Export.image.toDrive({
+      image:data,
+      description:'land',
+       scale: 30,
+     region :laikipia.geometry().bounds(),
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    final code 
+    
+    
+    
+    var Landsat_8 = ee.ImageCollection("LANDSAT/LC08/C02/T1");
+// var roi = countries.filter(ee.Filter.eq('country_na','Kenya')) ;
+
+Map.addLayer(laikipia,{},'laikipia',false);
+Map.centerObject(laikipia,8);
+var data = ee.Algorithms.Landsat.simpleComposite({
+  collection : Landsat_8.filterDate('2022-07-30','2022-12-31'),
+  asFloat:true
+});
+
+var trueColoVis = {min :0,max:0.3,bands:['B4','B3','B2']};
+Map.addLayer(data.clip(laikipia),trueColoVis ,'composite');
+Export.image.toDrive({
+      image:data,
+      description:'land',
+       scale: 30,
+       maxPixels:1e9,
+     region :laikipia.geometry().bounds(),
+    })
