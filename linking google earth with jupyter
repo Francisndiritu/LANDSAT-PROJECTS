@@ -1,0 +1,8 @@
+installation for Geemap
+
+pip install geemap
+conda create -n gee python=3.9
+conda activate gee
+conda install geopandas
+conda install mamba -c conda-forge
+mamba install geemap localtileserver -c conda-forge
